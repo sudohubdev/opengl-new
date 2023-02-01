@@ -1,37 +1,42 @@
-# Balash-new - rewrite of balash
-the example of opengl engine
+# Opengl заготовка
+приклад застосунку opengl
 # Build
-## For mac users:
-### Install brew + xcode
-### Then run commands in terminal:
+## Для macOS 🍎
+### Установити brew + xcode
+### Потім ввести команди:
 ```bash
-git clone https://github.com/g0vnocoders/balash-new
+git clone https://github.com/g0vnocoders/opengl-new
 brew install glew
+brew install glfw
+brew install libpng
 brew install glm
-make macos
+make macos #попросить пароль для ініціалізації
 make
 ```
-## For Windows users:
-### Download MSYS2 and VS Code
+## Для Windows:
+### Cкачати MSYS2 та VS Code(або іншу IDE)
 
 https://www.msys2.org
 
 https://code.visualstudio.com
 
-### Then run commands in terminal(__MSYS2 MinGW64 blue icon in start menu__):
+### Ввести ці команди (__MSYS2 MinGW64 з синьою іконкою в меню пуск__):
 ```bash
 # open it with C:\msys64\mingw64.exe!!!  not cmd.exe
-pacman -S git
+pacman -S git #install git
 pacman -S mingw-w64-x86_64-gcc
-git clone https://github.com/g0vnocoders/balash-new
-cd balash-new
+pacman -S mingw-w64-x86_64-toolchain #збірка
+git clone https://github.com/g0vnocoders/opengl-new
+cd opengl-new
+#compile libpng
 makepkg -sCL
+#compile our project
 make
 ```
 
 
-## For Linux users:
-### You already know what to do, dont ya?
+## Для користувачів Linux:
+### Все на ізі, для убунти ставимо пакети і запускаєм make:
 ```bash
 # Ubuntu/Debian
 sudo apt-get update
@@ -40,12 +45,28 @@ sudo apt-get install mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev
 sudo apt-get install libglew-dev libglfw3-dev libglm-dev
 sudo apt-get install libao-dev libmpg123-dev
 sudo apt-get install libpng-dev
-git clone https://github.com/g0vnocoders/balash-new
-cd balash-new
+git clone https://github.com/g0vnocoders/opengl-new
+cd opengl-new
 make
 ```
 
 
+# Довідничок
+## Щоб очистити всі файли щоб зробити новий проект пишемо:
+### make newproject
 
-#To make a new project(delete all cpp files):
-make newproject
+## Щоб зібрати просто пишемо:
+### make
+
+## Використовуємо GLEW + GLFW. Цей код працює всюди:
+```cpp
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif
+```

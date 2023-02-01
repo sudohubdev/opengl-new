@@ -1,6 +1,6 @@
 BUILDDIR=build
 OPTIMIZE=-O0 -g #fast -msse4 -mfpmath=sse -march=native -mpopcnt -mbmi2  -fno-pie -fno-PIE -fno-PIC -no-pie 
-ELFNAME=balash
+ELFNAME=project
 
 CXX=g++
 LIBS = -O0

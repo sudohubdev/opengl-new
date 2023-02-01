@@ -2,9 +2,9 @@ pkgname=('libpng16')
 pkgver=1
 pkgrel=1
 
-pkgdesc="Building libs required for mingw Balash"
+pkgdesc="Building libs required for mingw opengl project"
 arch=('any')
-url="https://github.com/g0vnocoders/balash-new"
+url="https://github.com/g0vnocoders/opengl-new"
 license=('MIT')
 
 
