@@ -21,6 +21,7 @@ https://www.msys2.org
 https://code.visualstudio.com
 
 ### Ввести ці команди (__MSYS2 MinGW64 з синьою іконкою в меню пуск__):
+### якщо щось питає [Y/N] то завжди натискуємо y. якщо питає щось вибрати просто ентер
 ```bash
 # open it with C:\msys64\mingw64.exe!!!  not cmd.exe
 pacman -S git #install git
